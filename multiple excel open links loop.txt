@@ -1,0 +1,15 @@
+Sub OpenMultipleLinks()
+ 'From WindowsLoop
+     Dim MultiLink As Hyperlink
+     Dim SelectedRng As Range
+     On Error Resume Next
+     'Window Heading
+     WLTitleId = "WL Open Multiple Links"
+     'Set Range
+     Set SelectedRng = Application.Selection
+     Set SelectedRng = Application.InputBox("Range", WLTitleId, SelectedRng.Address, Type:=8)
+     'Open Links One by One
+     For Each MultiLink In SelectedRng.Hyperlinks
+         MultiLink.Follow
+     Next
+ End Sub
